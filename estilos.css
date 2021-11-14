@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.container{
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 'video-destaque propaganda'
+                         'video-destaque videos-sugeridos';
+    width: 656px;
+    margin: auto;
+    height: 350px;
+    gap: 20px;
+    padding: 20px 0 0;
+}
+
+.video-destaque{    
+    grid-area: video-destaque;
+}
+
+.video-destaque .conteudo{
+    margin-top: 10px;
+}
+
+.video-destaque .conteudo .texto,
+.video-destaque .conteudo .visualizacoes,
+.video-destaque .conteudo .titulo{
+    margin: 0 0 5px;
+}
+
+.video-destaque .conteudo .titulo{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.video-destaque .conteudo .visualizacoes{
+    margin-bottom: 10px;
+}
+
+.video-destaque .conteudo .visualizacoes,
+.video-destaque .conteudo .texto{
+    font-size: 11px;
+}
+
+.videos-sugeridos{    
+    grid-area: videos-sugeridos;
+    display: flex;
+    flex-direction: column;
+}
+
+.propaganda{
+    background-color: gainsboro;
+    grid-area: propaganda;
+    width: 100%;    
+    text-align: center;    
+}
+
+.video{
+    background-color: gainsboro;
+    width: 100%;
+}
+
+.video-destaque .video{    
+    height: 202px;    
+}
+
+.videos-sugeridos .sugerido .video{    
+    height: 70px;   
+    width: 101px; 
+}
+
+.videos-sugeridos .sugerido{
+    display: flex;    
+    margin-bottom: 10px;
+}
+
+.videos-sugeridos .sugerido .conteudo{
+    padding: 0 7px;
+}
+
+.videos-sugeridos .sugerido .conteudo p{
+    font-size: 11px;
+}
+
+.videos-sugeridos .sugerido .conteudo .titulo,
+.videos-sugeridos .sugerido .conteudo .visualizacoes,
+.videos-sugeridos .sugerido .conteudo .data,
+.videos-sugeridos .sugerido .conteudo .autor{
+    margin: 0 0 5px;
+}
+
+.videos-sugeridos .sugerido .conteudo .titulo{
+    font-size: 14px;
+}
+
+@media(max-width: 700px){
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;        
+        grid-template-rows: repeat(3, 1fr);   
+        grid-template-areas: 'video-destaque'
+                             'propaganda'
+                             'videos-sugeridos';
+    }
+
+    .videos-sugeridos{          
+        flex-direction: row;
+        flex-wrap: wrap;        
+    }
+}
